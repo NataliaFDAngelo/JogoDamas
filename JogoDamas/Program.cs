@@ -8,14 +8,21 @@ namespace JogoDamas
     {
         static void Main(string[] args)
         {
-            Tabuleiro tab = new Tabuleiro(10, 10);
+            try
+            {
+                Tabuleiro tab = new Tabuleiro(10, 10);
 
-            tab.colocarPeca(new DamaSimples(tab, Cor.Preta), new Posicao(0, 0));
-            tab.colocarPeca(new DamaSimples(tab, Cor.Preta), new Posicao(0, 2));
-            tab.colocarPeca(new DamaPromovida(tab, Cor.Preta), new Posicao(0, 4));
+                tab.colocarPeca(new DamaSimples(tab, Cor.Preta), new Posicao(0, 0));
+                tab.colocarPeca(new DamaSimples(tab, Cor.Preta), new Posicao(0, 2));
+                tab.colocarPeca(new DamaPromovida(tab, Cor.Preta), new Posicao(0, 4));
 
-            Tela.imprimirTabuleiro(tab);
-
+                Tela.imprimirTabuleiro(tab);
+    
+            }
+            catch(Exception e)
+            {
+                Console.WriteLine(e.Message);
+            }
             Console.ReadLine();
         }
     }
