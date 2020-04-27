@@ -16,6 +16,8 @@ namespace JogoDamas
                 tab.colocarPeca(new DamaSimples(tab, Cor.Preta), new Posicao(0, 2));
                 tab.colocarPeca(new DamaPromovida(tab, Cor.Preta), new Posicao(0, 4));
 
+                tab.colocarPeca(new DamaPromovida(tab, Cor.Branca), new Posicao(8, 4));
+
                 Tela.imprimirTabuleiro(tab);
     
             }
