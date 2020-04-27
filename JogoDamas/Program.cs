@@ -9,6 +9,7 @@ namespace JogoDamas
         {
             Tabuleiro tab = new Tabuleiro(10, 10);
 
+            Tela.imprimirTabuleiro(tab);
 
             Console.ReadLine();
         }
