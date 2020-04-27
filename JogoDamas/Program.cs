@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Security.Cryptography;
 using JogoDamas.damas;
 using JogoDamas.tabuleiro;
 
@@ -10,18 +11,24 @@ namespace JogoDamas
         {
             try
             {
-                Tabuleiro tab = new Tabuleiro(10, 10);
+                PartidaDeDamas partida = new PartidaDeDamas();
 
-                tab.colocarPeca(new DamaSimples(tab, Cor.Preta), new Posicao(0, 0));
-                tab.colocarPeca(new DamaSimples(tab, Cor.Preta), new Posicao(0, 2));
-                tab.colocarPeca(new DamaPromovida(tab, Cor.Preta), new Posicao(0, 4));
+                while (!partida.terminada)
+                {
+                    Console.Clear();
+                    Tela.imprimirTabuleiro(partida.tab);
 
-                tab.colocarPeca(new DamaPromovida(tab, Cor.Branca), new Posicao(8, 4));
+                    Console.WriteLine();
+                    Console.Write("Origem: ");
+                    Posicao origem = Tela.lerPosicaoDama().toPosicao();
+                    Console.Write("Destino: ");
+                    Posicao destino = Tela.lerPosicaoDama().toPosicao();
 
-                Tela.imprimirTabuleiro(tab);
-    
+                    partida.executaMovimento(origem, destino);
+                }
+
             }
-            catch(Exception e)
+            catch (Exception e)
             {
                 Console.WriteLine(e.Message);
             }
