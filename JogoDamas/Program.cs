@@ -1,4 +1,5 @@
 ﻿using System;
+using JogoDamas.tabuleiro;
 
 namespace JogoDamas
 {
@@ -6,7 +7,10 @@ namespace JogoDamas
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Tabuleiro tab = new Tabuleiro(10, 10);
+
+
+            Console.ReadLine();
         }
     }
 }
