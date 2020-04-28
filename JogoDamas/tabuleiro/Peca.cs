@@ -1,6 +1,6 @@
 ﻿namespace JogoDamas.tabuleiro
 {
-    class Peca
+    abstract class Peca
     {
         public Posicao posicao { get; set; }
         public Cor cor { get; protected set; }
@@ -12,5 +12,7 @@
             this.tab = tab;
             this.cor = cor;
         }
+
+        public abstract bool[,] movimentosPossiveis();
     }
 }
